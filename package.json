@@ -1,8 +1,7 @@
 {
-  "name": "Project",
+  "name": "MAIII_MOBI",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "Silke Derudder & Yves Rijckaert & Jens Van Steen & Nicolas Nuytten",
+  "author": "Yves Rijckaert",
   "license": "MIT",
   "scripts": {
     "production": "npm run clean && npm run copy && NODE_ENV=production webpack -p",
