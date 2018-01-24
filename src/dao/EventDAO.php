@@ -155,10 +155,10 @@ class EventDAO extends DAO {
     return $stmt->execute();
   }
 
-  public function validateData($data){
-    $errors = [];
-    if(!isset($data["email"]) || empty($data["email"])){
-      $errors[] = "E-mail adres invullen aub.";
+  public function validateData($data) {
+    $errors = array();
+    if (empty($data['email'])) {
+      $errors['email'] = 'please enter the email';
     }
     return $errors;
   }
