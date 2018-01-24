@@ -8,8 +8,16 @@ define('WWW_ROOT', __DIR__ . DS);
 
 $routes = array(
   'home' => array(
-    'controller' => 'Events',
+    'controller' => 'Pages',
     'action' => 'index'
+  ),
+  'events' => array(
+    'controller' => 'Events',
+    'action' => 'events'
+  ),
+  'detail' => array(
+    'controller' => 'Events',
+    'action' => 'detail'
   ),
 );
 

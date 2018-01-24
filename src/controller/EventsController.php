@@ -11,7 +11,7 @@ class EventsController extends Controller {
     $this->eventDAO = new EventDAO();
   }
 
-  public function index() {
+  public function events() {
     $conditions = array();
 
     //example: search on title
@@ -36,11 +36,13 @@ class EventsController extends Controller {
     // );
 
     //example: search on tag name
-    // $conditions[] = array(
-    //   'field' => 'tag',
-    //   'comparator' => '=',
-    //   'value' => 'e-bike'
-    // );
+    if (isset($_POST['tag'])){
+      $conditions[0] = array(
+        'field' => 'tag',
+        'comparator' => '=',
+        'value' => $_POST['tag']
+      );
+    }
 
     //example: 1-day events on september 17
     // $conditions[] = array(
