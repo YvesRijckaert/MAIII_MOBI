@@ -67,18 +67,23 @@ class EventsController extends Controller {
     // );
 
     //example: search on organiser, with certain end date + time
-    $conditions[] = array(
-      'field' => 'organiser',
-      'comparator' => 'like',
-      'value' => 'brussel'
-    );
-    $conditions[] = array(
-      'field' => 'end',
-      'comparator' => '=',
-      'value' => '2018-09-16 18:00:00'
-    );
+    // $conditions[] = array(
+    //   'field' => 'organiser',
+    //   'comparator' => 'like',
+    //   'value' => 'brussel'
+    // );
+    // $conditions[] = array(
+    //   'field' => 'end',
+    //   'comparator' => '=',
+    //   'value' => '2018-09-16 18:00:00'
+    // );
 
     $events = $this->eventDAO->search($conditions);
+    $this->set('events', $events);
+  }
+
+  public function detail() {
+    $events = $this->eventDAO->selectById($_GET['id']);
     $this->set('events', $events);
   }
 

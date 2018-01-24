@@ -2,6 +2,13 @@
 require_once __DIR__ . '/DAO.php';
 class EventDAO extends DAO {
 
+  public function selectAll() {
+    $sql = "SELECT * FROM `ma3_auto_events`";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   public function search($conditions = array()) {
     $sql = "SELECT DISTINCT
       ma3_auto_events.*
@@ -130,6 +137,30 @@ class EventDAO extends DAO {
       $tagsByEventId[$row['event_id']][] = $row;
     }
     return $tagsByEventId;
+  }
+
+  public function getTags() {
+    $sql = "SELECT * FROM `ma3_auto_tags`";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function insert($data){
+    $errors = $this->validateData($data);
+    if(!empty($errors)) return false;
+    $sql = "INSERT INTO `ma3_auto_newsletter` (`email`) VALUES(:email)";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':email', $data['email']);
+    return $stmt->execute();
+  }
+
+  public function validateData($data){
+    $errors = [];
+    if(!isset($data["email"]) || empty($data["email"])){
+      $errors[] = "E-mail adres invullen aub.";
+    }
+    return $errors;
   }
 
 }
