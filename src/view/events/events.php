@@ -1,8 +1,23 @@
 <section>
+  <form action="?page=events" method="post">
+    <select name='tag'>
+      <option disabled selected>Kies een tag:</option>
+      <?php foreach ($tags as $tag): ?>
+        <option><?php echo($tag['tag']); ?></option>
+      <?php endforeach; ?>
+    </select>
+    <input class='submit-button' type="submit" name="action" value="Go!"/>
+  </form>
+</section>
+
+<section>
   <h1>Events</h1>
   <?php foreach($events as $event): ?>
     <article>
-      <header><h2><?php echo $event['title']; ?></h2></header>
+      <header>
+        <h2><?php echo $event['title']; ?></h2>
+        <a href='index.php?page=detail&amp;id=<?php echo($event['id']); ?>'>Meer info</a>
+      </header>
       <dl>
         <dt>code</dt><dd><?php echo $event['code'];?></dd>
         <dt>content</dt><dd><?php echo $event['content'];?></dd>

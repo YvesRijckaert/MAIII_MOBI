@@ -12,6 +12,9 @@ class EventsController extends Controller {
   }
 
   public function events() {
+    $tags = $this->eventDAO->getTags();
+    $this->set('tags', $tags);
+
     $conditions = array();
 
     //example: search on title
@@ -88,5 +91,4 @@ class EventsController extends Controller {
     $events = $this->eventDAO->selectById($_GET['id']);
     $this->set('events', $events);
   }
-
 }

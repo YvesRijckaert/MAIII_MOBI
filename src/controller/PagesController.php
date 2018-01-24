@@ -12,10 +12,9 @@ class PagesController extends Controller { //geef PagesController dezelfde macht
     }
 
     public function index() { //de index pagina
+        if(!empty($_POST)) $this->handleNewsLetter(); //als er een POST is gebeurd, voer de functie handleNewsLetter uit
         $this->set('title', 'Home'); //de title zetten we op home
         $this->set('currentPage', 'home'); //de currentPage = home
-
-        if(!empty($_POST)) $this->handleNewsLetter(); //als er een POST is gebeurd, voer de functie handleNewsLetter uit
     }
 
     private function handleNewsLetter(){
@@ -26,7 +25,7 @@ class PagesController extends Controller { //geef PagesController dezelfde macht
       } else {
         $errors = $this->eventDAO->validateData($_POST);
         $_SESSION["error"] = $errors['email'];
-        $this->redirect('index.php');
+        header('Location: index.php');
       }
   }
 }
