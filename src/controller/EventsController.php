@@ -12,9 +12,9 @@ class EventsController extends Controller {
   }
 
   public function events() {
+
     $tags = $this->eventDAO->getTags();
     $this->set('tags', $tags);
-
     $conditions = array();
 
     //example: search on title
@@ -85,6 +85,12 @@ class EventsController extends Controller {
 
     $events = $this->eventDAO->search($conditions);
     $this->set('events', $events);
+
+    if (strtolower($_SERVER['HTTP_ACCEPT']) == 'application/json') {
+      header('Content-Type: application/json');
+      echo json_encode($events);
+      exit();
+    }
   }
 
   public function detail() {

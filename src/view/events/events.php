@@ -1,5 +1,5 @@
 <section>
-  <form action="?page=events" method="post">
+  <form class="filter-tag" action="?page=events" method="post">
     <select name='tag'>
       <option disabled selected>Kies een tag:</option>
       <?php foreach ($tags as $tag): ?>
@@ -10,9 +10,15 @@
   </form>
 </section>
 
-<section>
+<section class="event-section">
   <h1>Events</h1>
-  <?php foreach($events as $event): ?>
+  <?php
+  $totalEvents = count($events);
+  echo '<p>Aantal resultaten: ' . $totalEvents . '</p>';
+  if (empty($events)) {?>
+    <p>Geen evenementen.<p>
+  <?php } else {
+    foreach($events as $event): ?>
     <article>
       <header>
         <h2><?php echo $event['title']; ?></h2>
@@ -33,5 +39,5 @@
         <dt>tags</dt><dd><ul><?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?></ul></dd>
       </dl>
     </article>
-  <? endforeach;?>
+  <? endforeach; } ?>
 </section>
