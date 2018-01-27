@@ -1,14 +1,18 @@
 :root {
-  --main-color: #ffeb3b;
-  --main-color-light: #fff9c4;
-  --text-color: #333;
-  --gray-light-color: #d2d2d2;
+  /* color palette */
+  --dark-green: #6bc9b4;
+  --light-green: #92e0cf;
+  --light-yellow: #fff2ce;
+  --light-pink: #f8cdd1;
+  --dark-red: #9d2229;
+  /* font sizes */
+  --font-size-big: 5rem;
+  --font-size-title: 4.6rem;
+  --font-size-subtitle: 2.4rem;
+  --font-size-bodycopy: 1.9rem;
+  /* font weights */
   --weight-regular: 400;
   --weight-bold: 700;
-  --my-border-width: 3rem;
-
-  --my-borders: {
-    color: white;
-    background-color: red;
-  }
+  /* margins */
+  --margin-big-view: 10rem;
 }

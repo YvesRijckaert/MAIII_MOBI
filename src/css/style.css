@@ -4,17 +4,88 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  height: 100%;
 }
 
-*, *:before, *:after { /* stylelint-disable-line */
+*, *:before, *:after {/* stylelint-disable-line */
   box-sizing: inherit;
 }
 
 body {
-  height: 100vh;
-  font-size: 1.5rem;
+  font-family: Rubik, sans-serif;
+  font-weight: var(--weight-regular);
+  font-size: var(--font-size-bodycopy);
+  line-height: 2rem;
 }
 
 .hide {
   display: none;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  margin-left: var(--margin-big-view);
+  margin-right: var(--margin-big-view);
+}
+
+.header {
+  background-color: var(--dark-green);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15.5rem;
+}
+
+.title {
+  font-size: var(--font-size-big);
+  color: var(--light-yellow);
+}
+
+.nav-list {
+  display: flex;
+}
+
+li:not(:first-child) {
+  margin-left: 4rem;
+}
+
+.nav-link, .active {
+  border-bottom: solid transparent .5rem;
+  color: white;
+
+  &:hover, &.active {
+    border-color: var(--light-green);
+  }
+}
+
+.about {
+  margin-top: 10rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: var(--font-size-title);
+  text-transform: uppercase;
+}
+
+/* border-bottom: var(--my-border-width); variabelen aanroepen met var */
+
+/* @apply --my-borders; /* apply om een set declaraties toe te passen */
+
+/* width: calc(100% - 10rem); */
+
+/* @custom-media --only-medium-screen (width >= 500px) and (width <= 1200px); */
+
+/* @media (--only-medium-screen) {
+
+  .css-next-media-query-ranges {
+    background-color: red;
+  }
+} */

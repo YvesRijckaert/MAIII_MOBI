@@ -34,6 +34,18 @@
           <?php echo $_SESSION['error'];?>
         </p>
       <?php endif; ?>
+      <header class="header">
+        <div class="header-content wrap">
+          <h1 class="title"><a href="index.php?page=home">Week van de mobiliteit</a></h1>
+          <nav>
+            <ul class="nav-list">
+              <li><a class="nav-link <?php if ($_GET['page'] === 'home') {echo 'active';}?>" href="index.php?page=home">Home</a></li>
+              <li><a class="nav-link <?php if ($_GET['page'] === 'events') {echo 'active';}?>" href="index.php?page=events">Activiteiten</a></li>
+              <li><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
     <?php echo $content; ?>
     <footer>
     </footer>

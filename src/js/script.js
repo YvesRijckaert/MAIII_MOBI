@@ -14,6 +14,7 @@ const init = () => {
 
 const parseData = data => {
   results = data;
+  //const test = results.filter(result => result.tags.map); //get the right tag via filter and map and then show the results
   console.log(results);
   console.log(searchTerm);
 };
