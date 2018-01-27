@@ -1,4 +1,7 @@
 <main>
+  <?php if(!empty($_GET['activity_id'])){
+    echo $test;
+  } ?>
   <section class="about">
     <div class="wrap">
       <h2 class="section-title">Week van de mobiliteit?</h2>
