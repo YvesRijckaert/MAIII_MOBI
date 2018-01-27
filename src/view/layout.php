@@ -19,7 +19,7 @@
         s.parentNode.insertBefore(wf, s);
       })(document);
     </script>
-    <title>Autovrij</title>
+    <title>Week van de mobiliteit</title>
     <?php echo $css;?>
   </head>
   <body>

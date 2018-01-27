@@ -25,7 +25,7 @@
 </section>
 
 <section class="event-section">
-  <h1>Events</h1>
+  <h1>Events</h2>
   <?php
   $totalEvents = count($events);
   echo '<p>Aantal resultaten: ' . $totalEvents . '</p>';

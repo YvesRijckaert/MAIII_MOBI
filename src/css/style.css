@@ -15,7 +15,7 @@ body {
   font-family: Rubik, sans-serif;
   font-weight: var(--weight-regular);
   font-size: var(--font-size-bodycopy);
-  line-height: 2rem;
+  line-height: 2.8rem;
 }
 
 .hide {
@@ -52,7 +52,7 @@ a {
   display: flex;
 }
 
-li:not(:first-child) {
+.nav-list li:not(:first-child) {
   margin-left: 4rem;
 }
 
@@ -67,12 +67,64 @@ li:not(:first-child) {
 
 .about {
   margin-top: 10rem;
+  margin-bottom: 10rem;
+  background-image: linear-gradient(var(--light-yellow) 25rem, transparent  0);
+  background-position: 0rem 18rem;
+  background-repeat: no-repeat;
 }
 
 .section-title {
   text-align: center;
   font-size: var(--font-size-title);
   text-transform: uppercase;
+}
+
+.about .wrap {
+  position: relative;
+  display: grid;
+  grid-template: min-content min-content min-content / 1fr 1fr 1fr;
+  grid-gap: 5rem;
+  grid-template-areas:
+    'header header header'
+    'image text text'
+    'image text text'
+    'image button button2';
+}
+
+.about .wrap::after {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  top: 13.6rem;
+  left: 3.6rem;
+  width: 57.8rem;
+  height: 43.4rem;
+  background-color: var(--light-green);
+}
+
+.about-header {
+  grid-area: header;
+}
+
+.about-image {
+  z-index: 1;
+  grid-area: image;
+}
+
+.about-text {
+  grid-area: text;
+  justify-self: end;
+  width: 57.8rem;
+}
+
+.about-button-1 {
+  grid-area: button;
+  justify-self: flex-end;
+}
+
+.about-button-2 {
+  grid-area: button2;
+  justify-self: flex-end;
 }
 
 /* border-bottom: var(--my-border-width); variabelen aanroepen met var */
