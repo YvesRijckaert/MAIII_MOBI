@@ -1,5 +1,19 @@
 <section>
   <form class="filter-tag" action="?page=events" method="post">
+    <input type="checkbox" name="zondag"/>
+    <label>Zondag</label>
+    <input type="checkbox" name="maandag"/>
+    <label>Maandag</label>
+    <input type="checkbox" name="dinsdag"/>
+    <label>Dinsdag</label>
+    <input type="checkbox" name="woensdag"/>
+    <label>Woensdag</label>
+    <input type="checkbox" name="donderdag"/>
+    <label>Donderdag</label>
+    <input type="checkbox" name="vrijdag"/>
+    <label>Vrijdag</label>
+    <input type="checkbox" name="zaterdag"/>
+    <label>Zaterdag</label>
     <select name='tag'>
       <option disabled selected>Kies een tag:</option>
       <?php foreach ($tags as $tag): ?>
