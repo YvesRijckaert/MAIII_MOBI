@@ -1,18 +1,18 @@
 <section>
   <form class="filter-tag" action="?page=events" method="post">
-    <input type="checkbox" name="zondag"/>
+    <input type="radio" name="zondag"/>
     <label>Zondag</label>
-    <input type="checkbox" name="maandag"/>
+    <input type="radio" name="maandag"/>
     <label>Maandag</label>
-    <input type="checkbox" name="dinsdag"/>
+    <input type="radio" name="dinsdag"/>
     <label>Dinsdag</label>
-    <input type="checkbox" name="woensdag"/>
+    <input type="radio" name="woensdag"/>
     <label>Woensdag</label>
-    <input type="checkbox" name="donderdag"/>
+    <input type="radio" name="donderdag"/>
     <label>Donderdag</label>
-    <input type="checkbox" name="vrijdag"/>
+    <input type="radio" name="vrijdag"/>
     <label>Vrijdag</label>
-    <input type="checkbox" name="zaterdag"/>
+    <input type="radio" name="zaterdag"/>
     <label>Zaterdag</label>
     <select name='tag'>
       <option disabled selected>Kies een tag:</option>
