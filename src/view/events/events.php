@@ -1,3 +1,4 @@
+<main>
 <section>
   <form class="filter-tag" action="?page=events" method="post">
     <input type="radio" name="datum" value="alles" checked/>

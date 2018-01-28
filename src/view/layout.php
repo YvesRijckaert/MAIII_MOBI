@@ -47,7 +47,38 @@
         </div>
       </header>
     <?php echo $content; ?>
+  </main>
+  <section class="sponsors">
+    <div class="wrap">
+      <header>
+        <h2 class="hide">Sponsors</h2>
+      </header>
+      <div class="sponsors-content">
+        <p class="sponsors-text">De week van de mobiliteit krijgt de steun van:</p>
+        <div class="sponsors-images">
+          <img src="assets/img/nmbs-logo.jpg" alt="Nmbs logo" width="95" height="64" />
+          <img src="assets/img/vlaanderen-logo.jpg" alt="Vlaanderen logo" width="71" height="98" />
+          <img src="assets/img/delijn-logo.jpg" alt="Delijn logo" width="81" height="80" />    <img src="assets/img/european-logo.jpg" alt="European mobility week logo" width="106" height="73" />
+        </div>
+      </div>
+    </div>
+  </section>
     <footer>
+      <div class="wrap">
+        <p class="footer-text">Copyright Week Van De Mobiliteit</p>
+        <div class="social">
+          <a target="_blank" href="https://www.instagram.com/weekvandemobiliteit/">
+            <img src="./assets/img/instagram.svg" title="instagram" alt="instagram icon" width="40" height="40"/>
+          </a>
+          <a target="_blank" href="https://twitter.com/week_mobiliteit">
+            <img src="./assets/img/twitter.svg" title="twitter" alt="twitter icon" width="40" height="40"/>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/Weekvandemobiliteit/">
+            <img src="./assets/img/facebook.svg" title="facebook" alt="facebook icon" width="40" heyight="40"/>
+          </a>
+        </div>
+        <p class="footer-text">Major 3 Yves Rijckaert</p>
+      </div>
     </footer>
     <?php echo $js;?>
   </body>

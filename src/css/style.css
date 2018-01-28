@@ -28,8 +28,12 @@ a {
 }
 
 .wrap {
-  width: 140rem;
+  width: 135rem;
   margin: 0 auto;
+}
+
+main {
+  min-height: calc(100vh - 45rem); /*for when there aren't many events but you still want the footer to stick to the bottom*/
 }
 
 .header {
@@ -82,46 +86,45 @@ a {
   margin-bottom: 5rem;
 }
 
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-buttons .button:nth-child(1) {
+  margin-right: 5rem;
+}
+
 .about .wrap {
   position: relative;
-  display: grid;
-  grid-template: min-content 2fr min-content min-content / 3fr 1fr 1fr;
-  grid-template-areas:
-    'header header header'
-    'image text text'
-    'image . .'
-    'image button button2';
 }
 
 .about .wrap::after {
   content: '';
   z-index: 0;
   position: absolute;
-  top: 13.6rem;
+  top: 14.6rem;
   left: 3.6rem;
   width: 57.8rem;
   height: 43.4rem;
   background-color: var(--light-green);
 }
 
-.about-header {
-  grid-area: header;
-}
-
 .about-image {
   z-index: 1;
-  grid-area: image;
 }
 
 .about-text {
-  grid-area: text;
-  align-self: center;
-  justify-self: end;
   width: 65rem;
 }
 
 .button {
-  justify-self: flex-end;
   background-color: var(--dark-green);
   padding: 1rem 4rem;
   color: white;
@@ -129,6 +132,7 @@ a {
   &:hover {
     background-color: var(--light-green);
     color: var(--dark-green);
+    cursor: pointer;
   }
 }
 
@@ -236,6 +240,17 @@ a {
   justify-content: space-between;
 }
 
+.organiseer-bodycopy {
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+}
+
+.organiseer-bodycopy .button {
+  align-self: flex-start;
+  margin-top: 5rem;
+}
+
 .organiseer-text {
   width: 65rem;
 }
@@ -264,9 +279,10 @@ a {
 
 .weetjes {
   display: grid;
-  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
-  grid-row-gap: 2rem;
+  grid-template: repeat(3, min-content) / repeat(3, min-content);
+  grid-gap: 4rem;
   grid-auto-flow: column;
+  position: relative;
 }
 
 .weetje {
@@ -291,6 +307,12 @@ a {
 
 .weetje:nth-child(4), .weetje:nth-child(5), .weetje:nth-child(6) {
   justify-self: flex-end;
+  grid-column: 3;
+}
+
+.wistjes-image {
+  grid-column: 2;
+  grid-row: span 3;
 }
 
 .weetje::before {
@@ -321,9 +343,136 @@ a {
   background-position-x: 1.4rem;
 }
 
-/* @apply --my-borders; /* apply om een set declaraties toe te passen */
+/* newsletter */
 
-/* width: calc(100% - 10rem); */
+.newsletter {
+  background-image: linear-gradient(var(--light-yellow) 37rem, transparent  0);
+  background-position: 39rem 1.5rem;
+  background-repeat: no-repeat;
+}
+
+.newsletter-content {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10rem;
+}
+
+.newsletter-content form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+  width: 34.8rem;
+}
+
+.newsletter-info {
+  width: 46rem;
+}
+
+.newsletter-input {
+  height: 4.5rem;
+  font-size: var(--font-size-bodycopy);
+  padding-left: 1.5rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field:not(:first-child) {
+  padding-top: 2rem;
+}
+
+.form-field label {
+  font-size: var(--font-size-subtitle);
+  padding-bottom: .5rem;
+}
+
+.newsletter-input::placeholder {
+  font-size: var(--font-size-bodycopy);
+  font-style: italic;
+}
+
+.submit-button {
+  border: none;
+  align-self: flex-end;
+  font-size: var(--font-size-subitle);
+}
+
+/* instagram section */
+
+.instagram {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}
+
+.instagram-content {
+  display: grid;
+  grid-template: 8.5fr 1fr / repeat(3, 1fr);
+  grid-row-gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.instagram-content .image:nth-child(1) {
+  justify-self: start;
+}
+
+.instagram-content .image:nth-child(3) {
+  justify-self: end;
+}
+
+.instagram-content .button {
+  grid-column: 2;
+  justify-self: center;
+}
+
+/* sponsors section */
+
+.sponsors {
+  margin-bottom: 5rem;
+}
+
+.sponsors-text {
+  font-size: var(--font-size-subtitle);
+}
+
+.sponsors-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sponsors-images {
+  display: flex;
+  align-items: center;
+}
+
+/* footer */
+
+footer {
+  height: 15.5rem;
+  background-color: var(--dark-green);
+}
+
+footer .wrap {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  color: white;
+}
+
+.social {
+  display: flex;
+  width: 15rem;
+  justify-content: space-between;
+  align-items: center;
+}
+/* @apply --my-borders; /* apply om een set declaraties toe te passen */
 
 /* @custom-media --only-medium-screen (width >= 500px) and (width <= 1200px); */
 
