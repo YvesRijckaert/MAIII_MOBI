@@ -9,7 +9,6 @@ const init = () => {
   //Progressive enhancement: AJAX tags: IF javascript works, this code will be executed:
   if (location.search === `?page=events`) { //if we're on the events page
     document.querySelector(`.submit-button`).classList.add(`hide`); //hide the submit button
-    eventSection.innerHTML = ``; //clear the results generated from PHP
     form.addEventListener(`change`, submitHandler); //listen to the change event on dropdown menu
   }
 };

@@ -52,15 +52,17 @@
       <header>
         <h2 class="section-title">Wistjedatjes</h2>
       </header>
-        <img class="image" height="376" width="452" src="assets/img/auto.svg" alt="Een auto" />
+      <article class="wistjes-content">
+        <img class="wistjes-image" height="376" width="452" src="assets/img/auto.svg" alt="Een auto" />
         <div class="weetjes">
           <a data-count="feit 1" class="weetje" href="#">637 verkeersdoden per jaar</a>
           <a data-count="feit 2" class="weetje" href="#">doodsoorzaak nr. 1 bij -35 jarigen</a>
-          <a data-count="feit 3" class="weetje" href="#">trein 75&#37; minder CO<sub>2</sub> dan auto</a>
+          <a data-count="feit 3" class="weetje" href="#">trein 75&#37; minder CO2 dan auto</a>
           <a data-count="feit 4" class="weetje" href="#">SUV 74&#37; meer uitstoot dan Sedan</a>
-          <a data-count="feit 5" class="weetje" href="#">afwijkend sperma door luchtvervuiling</a>
+          <a data-count="feit 5" class="weetje" href="#">1.200 sterftes door longkanker</a>
           <a data-count="feit 6" class="weetje" href="#">luchtvervuiling slecht voor foetus</a>
         </div>
+      </article>
     </div>
   </section>
 

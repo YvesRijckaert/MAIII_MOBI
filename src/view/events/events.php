@@ -1,6 +1,6 @@
 <section>
   <form class="filter-tag" action="?page=events" method="post">
-    <input type="radio" name="datum" value="alles"/>
+    <input type="radio" name="datum" value="alles" checked/>
     <label>Alles</label>
     <input type="radio" name="datum" value="zondag"/>
     <label>Zondag</label>
