@@ -28,7 +28,7 @@ a {
 }
 
 .wrap {
-  width: 135rem;
+  width: 80vw;
   margin: 0 auto;
 }
 
@@ -48,7 +48,7 @@ main {
 }
 
 .title {
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-title);
   color: var(--light-yellow);
 }
 
@@ -67,6 +67,54 @@ main {
   &:hover, &.active {
     border-color: var(--light-green);
   }
+}
+
+/* header */
+
+.above-the-fold {
+  height: 90vh;
+}
+
+.above-the-fold::before {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  width: 64.8rem;
+  height: 76.6rem;
+  background-position: 27rem 0, 0 0;
+  background-image: url(/assets/img/step.svg), linear-gradient(var(--dark-green), 40rem, transparent  0);
+  background-repeat: no-repeat;
+  background-size: 37.8rem 70rem, 50rem 35rem;
+  top: 12rem;
+}
+
+.above-the-fold::after {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  width: 35rem;
+  height: 79rem;
+  right: 0;
+  background-size: 35rem 79rem;
+  background-image: url(/assets/img/file.svg);
+  background-repeat: no-repeat;
+  top: 20rem;
+}
+
+.above-the-fold .wrap {
+  padding-top: 10rem;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.above-the-fold-title {
+  font-size: var(--font-size-title);
+  line-height: 1.2;
+  color: var(--dark-red);
+  text-transform: uppercase;
 }
 
 /* about section */
@@ -101,23 +149,20 @@ main {
   margin-right: 5rem;
 }
 
-.about .wrap {
+.about-image {
+  z-index: 1;
   position: relative;
 }
 
-.about .wrap::after {
+.about-image::after {
   content: '';
   z-index: 0;
   position: absolute;
-  top: 14.6rem;
+  top: 5.8rem;
   left: 3.6rem;
   width: 57.8rem;
   height: 43.4rem;
   background-color: var(--light-green);
-}
-
-.about-image {
-  z-index: 1;
 }
 
 .about-text {
@@ -286,7 +331,7 @@ main {
 }
 
 .weetje {
-  width: 45rem;
+  width: 42rem;
   height: 6.6rem;
   display: flex;
   justify-content: space-between;
@@ -323,14 +368,14 @@ main {
   color: white;
   text-transform: uppercase;
   font-size: var(--font-size-subtitle);
-  width: 9rem;
+  width: 8rem;
   height: 6.6rem;
   background-color: #7a7a7a;
 }
 
 .weetje::after {
   content: '';
-  width: 4rem;
+  width: 3rem;
   height: 2.5rem;
   transition: all .2s ease-in-out;
   background-image: url(/assets/img/arrow.svg);
@@ -340,7 +385,7 @@ main {
 }
 
 .weetje:hover::after {
-  background-position-x: 1.4rem;
+  background-position-x: .7rem;
 }
 
 /* newsletter */
@@ -414,11 +459,11 @@ main {
   align-items: center;
 }
 
-.instagram-content .image:nth-child(1) {
+.instagram-content .instagram-image:nth-child(1) {
   justify-self: start;
 }
 
-.instagram-content .image:nth-child(3) {
+.instagram-content .instagram-image:nth-child(3) {
   justify-self: end;
 }
 
@@ -472,13 +517,45 @@ footer .wrap {
   justify-content: space-between;
   align-items: center;
 }
-/* @apply --my-borders; /* apply om een set declaraties toe te passen */
 
-/* @custom-media --only-medium-screen (width >= 500px) and (width <= 1200px); */
+@custom-media --only-big-screen (width >= 1024px) and (width <= 1440px);
+@custom-media --only-medium-screen (width >= 768px) and (width <= 1024px);
+@custom-media --only-small-screen (width >= 500px) and (width <= 768px);
+@custom-media --only-mini-screen (width >= 320px) and (width <= 500px);
 
-/* @media (--only-medium-screen) {
+@media (--only-big-screen) {
 
-  .css-next-media-query-ranges {
-    background-color: red;
+  .about-image, .about-image::after, .uitgelicht-image, .organiseer-image, .organiseer-image::after {
+    width: 46.2rem;
+    height: 34.68rem;
   }
-} */
+
+}
+
+@media (--only-medium-screen) {
+
+  .about-image, .about-image::after, .uitgelicht-image, .organiseer-image, .organiseer-image::after {
+    width: 38.5rem;
+    height: 28.9rem;
+  }
+
+}
+
+@media (--only-small-screen) {
+
+  .about-image, .about-image::after, .uitgelicht-image, .organiseer-image, .organiseer-image::after {
+    width: 32rem;
+    height: 24rem;
+  }
+}
+
+@media (--only-mini-screen) {
+
+  .about-image, .about-image::after, .uitgelicht-image, .organiseer-image, .organiseer-image::after {
+    width: 26.6rem;
+    height: 20rem;
+  }
+
+}
+
+/* @apply --my-borders; /* apply om een set declaraties toe te passen */
