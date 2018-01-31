@@ -35,7 +35,7 @@
         </p>
       <?php endif; ?>
       <header class="header">
-        <div class="header-content wrap">
+        <div class="header-content">
           <h1 class="title"><a href="index.php?page=home">Week van de mobiliteit</a></h1>
           <nav>
             <ul class="nav-list">
@@ -47,24 +47,8 @@
         </div>
       </header>
     <?php echo $content; ?>
-  </main>
-  <section class="sponsors">
-    <div class="wrap">
-      <header>
-        <h2 class="hide">Sponsors</h2>
-      </header>
-      <div class="sponsors-content">
-        <p class="sponsors-text">De week van de mobiliteit krijgt de steun van:</p>
-        <div class="sponsors-images">
-          <img src="assets/img/nmbs-logo.jpg" alt="Nmbs logo" width="95" height="64" />
-          <img src="assets/img/vlaanderen-logo.jpg" alt="Vlaanderen logo" width="71" height="98" />
-          <img src="assets/img/delijn-logo.jpg" alt="Delijn logo" width="81" height="80" />    <img src="assets/img/european-logo.jpg" alt="European mobility week logo" width="106" height="73" />
-        </div>
-      </div>
-    </div>
-  </section>
-    <footer>
-      <div class="wrap">
+    <footer class="footer">
+      <div class="footer-wrap">
         <p class="footer-text">Copyright Week Van De Mobiliteit</p>
         <div class="social">
           <a target="_blank" href="https://www.instagram.com/weekvandemobiliteit/">
