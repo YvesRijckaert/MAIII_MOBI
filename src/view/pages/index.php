@@ -1,4 +1,4 @@
-<main>
+<main class="main">
   <?php if(!empty($_GET['activity_id'])){
     echo $test;
   } ?>
@@ -10,117 +10,99 @@
     </div>
   </section> -->
   <section class="about">
-    <div class="wrap">
-      <header class="about-header">
-        <h2 class="section-title">Week van de mobiliteit?</h2>
-      </header>
-      <div class="about-content">
-        <picture class="about-image">
-          <source media="(min-width: 1440px)" srcset="assets/img/vrouwen-markt-fiets/full.webp" type="image/webp"/>
-          <source media="(min-width: 1440px)" srcset="assets/img/vrouwen-markt-fiets/full.jpg" />
-          <source media="(min-width: 1024px)" srcset="assets/img/vrouwen-markt-fiets/medium.webp"  type="image/webp" />
-          <source media="(min-width: 1024px)" srcset="assets/img/vrouwen-markt-fiets/medium.jpg" />
-          <source media="(min-width: 768px)" srcset="assets/img/vrouwen-markt-fiets/small.webp"  type="image/webp" />
-          <source media="(min-width: 768px)" srcset="assets/img/vrouwen-markt-fiets/small.jpg" />
-          <source media="(min-width: 320px)" srcset="assets/img/vrouwen-markt-fiets/mini.webp"  type="image/webp" />
-          <source media="(min-width: 320px)" srcset="assets/img/vrouwen-markt-fiets/mini.jpg" />
+    <header class="about-header">
+      <h2 class="section-title">Week van de mobiliteit?</h2>
+    </header>
+    <picture class="about-image">
+      <source media="(min-width: 1440px)" srcset="assets/img/vrouwen-markt-fiets/full.webp" type="image/webp"/>
+      <source media="(min-width: 1440px)" srcset="assets/img/vrouwen-markt-fiets/full.jpg" />
+      <source media="(min-width: 1024px)" srcset="assets/img/vrouwen-markt-fiets/medium.webp"  type="image/webp" />
+      <source media="(min-width: 1024px)" srcset="assets/img/vrouwen-markt-fiets/medium.jpg" />
+      <source media="(min-width: 768px)" srcset="assets/img/vrouwen-markt-fiets/small.webp"  type="image/webp" />
+      <source media="(min-width: 768px)" srcset="assets/img/vrouwen-markt-fiets/small.jpg" />
+      <source media="(min-width: 320px)" srcset="assets/img/vrouwen-markt-fiets/mini.webp"  type="image/webp" />
+      <source media="(min-width: 320px)" srcset="assets/img/vrouwen-markt-fiets/mini.jpg" />
 
-          <img class="about-image"
-          height="434" width="578"
-          srcset="assets/img/vrouwen-markt-fiets/full.jpg 1156w,
-                  assets/img/vrouwen-markt-fiets/medium.jpg 933w,
-                  assets/img/vrouwen-markt-fiets/small.jpg 566w,
-                  assets/img/vrouwen-markt-fiets/mini.jpg 411w"
-          alt="Vrouwen op de markt met hun fiets" />
-        </picture>
-        <p class="about-text">Elk jaar zet de Week van de Mobiliteit (16 – 22 september) Vlaanderen #goedopweg om mee(r) te autominderen. Tal van acties tijdens de Week doen ons stil staan bij ons verplaatsingsgedrag en laten proeven van de alternatieven. Want wie de overstap maakt ontdekt zelf de voordelen van het stappen, trappen, trein/tram/bus of autodelen.</p>
-      </div>
-      <div class="about-buttons">
-        <a class="button" href="#">vorige edities</a>
-        <a class="button" href="#">&#35;goedopweg</a>
-      </div>
+      <img class="about-image"
+      height="434" width="578"
+      srcset="assets/img/vrouwen-markt-fiets/full.jpg 1156w,
+              assets/img/vrouwen-markt-fiets/medium.jpg 933w,
+              assets/img/vrouwen-markt-fiets/small.jpg 566w,
+              assets/img/vrouwen-markt-fiets/mini.jpg 411w"
+      alt="Vrouwen op de markt met hun fiets" />
+    </picture>
+    <p class="about-text">Elk jaar zet de Week van de Mobiliteit (16 – 22 september) Vlaanderen #goedopweg om mee(r) te autominderen. Tal van acties tijdens de Week doen ons stil staan bij ons verplaatsingsgedrag en laten proeven van de alternatieven. Want wie de overstap maakt ontdekt zelf de voordelen van het stappen, trappen, trein/tram/bus of autodelen.</p>
+    <div class="about-buttons">
+      <a class="button" href="#">vorige edities</a>
+      <a class="button" href="#">&#35;goedopweg</a>
     </div>
   </section>
 
   <section class="uitgelicht">
-    <div class="wrap">
-      <header>
-        <h2 class="section-title">In de kijker</h2>
-      </header>
-      <div class="uitgelicht-content">
-        <picture class="uitgelicht-image">
-          <source media="(min-width: 1440px)" srcset="assets/img/man-fiets/full.webp" type="image/webp"/>
-          <source media="(min-width: 1440px)" srcset="assets/img/man-fiets/full.jpg" />
-          <source media="(min-width: 1024px)" srcset="assets/img/man-fiets/medium.webp"  type="image/webp" />
-          <source media="(min-width: 1024px)" srcset="assets/img/man-fiets/medium.jpg" />
-          <source media="(min-width: 768px)" srcset="assets/img/man-fiets/small.webp"  type="image/webp" />
-          <source media="(min-width: 768px)" srcset="assets/img/man-fiets/small.jpg" />
-          <source media="(min-width: 320px)" srcset="assets/img/man-fiets/mini.webp"  type="image/webp" />
-          <source media="(min-width: 320px)" srcset="assets/img/man-fiets/mini.jpg" />
-          <img class="uitgelicht-image"
-          height="434" width="578"
-          srcset="assets/img/man-fiets/full.jpg 1156w,
-                  assets/img/man-fiets/medium.jpg 933w,
-                  assets/img/man-fiets/small.jpg 566w,
-                  assets/img/man-fiets/mini.jpg 411w"
-          alt="Man fietst aan het MAS in Antwerpen" />
-        </picture>
-        <div class="uitgelicht-events">
-          <a data-date="Ma 16" class="uitgelicht-event" href="#">Expo Mobility</a>
-          <a data-date="Wo 18" class="uitgelicht-event" href="#">Le beau V</a>
-          <a data-date="Do 19" class="uitgelicht-event" href="#">Bike Brussels</a>
-          <a class="button" href="index.php?page=events">alle activiteiten</a>
-        </div>
-      </div>
+    <header class="uitgelicht-header">
+      <h2 class="section-title">In de kijker</h2>
+    </header>
+    <picture class="uitgelicht-image">
+      <source media="(min-width: 1440px)" srcset="assets/img/man-fiets/full.webp" type="image/webp"/>
+      <source media="(min-width: 1440px)" srcset="assets/img/man-fiets/full.jpg" />
+      <source media="(min-width: 1024px)" srcset="assets/img/man-fiets/medium.webp"  type="image/webp" />
+      <source media="(min-width: 1024px)" srcset="assets/img/man-fiets/medium.jpg" />
+      <source media="(min-width: 768px)" srcset="assets/img/man-fiets/small.webp"  type="image/webp" />
+      <source media="(min-width: 768px)" srcset="assets/img/man-fiets/small.jpg" />
+      <source media="(min-width: 320px)" srcset="assets/img/man-fiets/mini.webp"  type="image/webp" />
+      <source media="(min-width: 320px)" srcset="assets/img/man-fiets/mini.jpg" />
+      <img class="uitgelicht-image"
+      height="434" width="578"
+      srcset="assets/img/man-fiets/full.jpg 1156w,
+              assets/img/man-fiets/medium.jpg 933w,
+              assets/img/man-fiets/small.jpg 566w,
+              assets/img/man-fiets/mini.jpg 411w"
+      alt="Man fietst aan het MAS in Antwerpen" />
+    </picture>
+    <div class="uitgelicht-events">
+      <a data-date="Ma 16" class="uitgelicht-event" href="#">Expo Mobility</a>
+      <a data-date="Wo 18" class="uitgelicht-event" href="#">Le beau V</a>
+      <a data-date="Do 19" class="uitgelicht-event" href="#">Bike Brussels</a>
+      <a class="organiseer-button button" href="index.php?page=events">alle activiteiten</a>
     </div>
   </section>
 
   <section class="organiseer">
-    <div class="wrap">
-      <header>
-        <h2 class="section-title">Organiseer mee</h2>
-      </header>
-      <div class="organiseer-content">
-        <picture class="organiseer-image">
-          <source media="(min-width: 1440px)" srcset="assets/img/meisje-schmink/full.webp" type="image/webp"/>
-          <source media="(min-width: 1440px)" srcset="assets/img/meisje-schmink/full.jpg" />
-          <source media="(min-width: 1024px)" srcset="assets/img/meisje-schmink/medium.webp"  type="image/webp" />
-          <source media="(min-width: 1024px)" srcset="assets/img/meisje-schmink/medium.jpg" />
-          <source media="(min-width: 768px)" srcset="assets/img/meisje-schmink/small.webp"  type="image/webp" />
-          <source media="(min-width: 768px)" srcset="assets/img/meisje-schmink/small.jpg" />
-          <source media="(min-width: 320px)" srcset="assets/img/meisje-schmink/mini.webp"  type="image/webp" />
-          <source media="(min-width: 320px)" srcset="assets/img/meisje-schmink/mini.jpg" />
-          <img class="organiseer-image"
-          height="434" width="578"
-          srcset="assets/img/meisje-schmink/full.jpg 1156w,
-                  assets/img/meisje-schmink/medium.jpg 933w,
-                  assets/img/meisje-schmink/small.jpg 566w,
-                  assets/img/meisje-schmink/mini.jpg 411w"
-          alt="Meisje wordt geschminkt" />
-        </picture>
-        <div class="organiseer-bodycopy">
-          <p class="organiseer-text">Registreer jouw mobiliteitsactie. Zo kunnen we je initiatief mee promoten en brengen we de dynamiek voor duurzame mobiliteit tijdens de Week hier in beeld. Want samen zijn we #goedopweg! Trouwens, we hebben ook leuk kant-en-klaar promotiemateriaal voor je klaar!</p>
-          <a class="button" href="#">nu inschrijven</a>
-        </div>
-      </div>
-    </div>
+    <header class="organiseer-header">
+      <h2 class="section-title">Organiseer mee</h2>
+    </header>
+    <picture class="organiseer-image">
+      <source media="(min-width: 1440px)" srcset="assets/img/meisje-schmink/full.webp" type="image/webp"/>
+      <source media="(min-width: 1440px)" srcset="assets/img/meisje-schmink/full.jpg" />
+      <source media="(min-width: 1024px)" srcset="assets/img/meisje-schmink/medium.webp"  type="image/webp" />
+      <source media="(min-width: 1024px)" srcset="assets/img/meisje-schmink/medium.jpg" />
+      <source media="(min-width: 768px)" srcset="assets/img/meisje-schmink/small.webp"  type="image/webp" />
+      <source media="(min-width: 768px)" srcset="assets/img/meisje-schmink/small.jpg" />
+      <source media="(min-width: 320px)" srcset="assets/img/meisje-schmink/mini.webp"  type="image/webp" />
+      <source media="(min-width: 320px)" srcset="assets/img/meisje-schmink/mini.jpg" />
+      <img class="organiseer-image"
+      height="434" width="578"
+      srcset="assets/img/meisje-schmink/full.jpg 1156w,
+              assets/img/meisje-schmink/medium.jpg 933w,
+              assets/img/meisje-schmink/small.jpg 566w,
+              assets/img/meisje-schmink/mini.jpg 411w"
+      alt="Meisje wordt geschminkt" />
+    </picture>
+    <p class="organiseer-text">Registreer jouw mobiliteitsactie. Zo kunnen we je initiatief mee promoten en brengen we de dynamiek voor duurzame mobiliteit tijdens de Week hier in beeld. Want samen zijn we #goedopweg! Trouwens, we hebben ook leuk kant-en-klaar promotiemateriaal voor je klaar!</p>
+    <a class="button" href="#">nu inschrijven</a>
   </section>
 
   <section class="wistjes">
-    <div class="wrap">
-      <header>
-        <h2 class="section-title">Wistjedatjes</h2>
-      </header>
-        <div class="weetjes">
-          <a data-count="feit 1" class="weetje" href="#">637 verkeersdoden per jaar</a>
-          <a data-count="feit 2" class="weetje" href="#">doodsoorzaak nr. 1 bij -35 jarigen</a>
-          <a data-count="feit 3" class="weetje" href="#">trein 75&#37; minder CO2 dan auto</a>
-          <a data-count="feit 4" class="weetje" href="#">SUV 74&#37; meer uitstoot dan Sedan</a>
-          <a data-count="feit 5" class="weetje" href="#">1.200 sterftes door longkanker</a>
-          <a data-count="feit 6" class="weetje" href="#">luchtvervuiling slecht voor foetus</a>
-          <img class="wistjes-image" height="313" width="376" src="assets/img/auto.svg" alt="Een auto" />
-        </div>
-    </div>
+    <header class="wistjes-header">
+      <h2 class="section-title">Wistjedatjes</h2>
+    </header>
+    <a data-count="feit 1" class="wistje wistje1" href="#">637 verkeersdoden per jaar</a>
+    <a data-count="feit 2" class="wistje wistje2" href="#">doodsoorzaak nr. 1 bij -35 jarigen</a>
+    <a data-count="feit 3" class="wistje wistje3" href="#">trein 75&#37; minder CO2 dan auto</a>
+    <a data-count="feit 4" class="wistje wistje4" href="#">SUV 74&#37; meer uitstoot dan Sedan</a>
+    <a data-count="feit 5" class="wistje wistje5" href="#">1.200 sterftes door longkanker</a>
+    <a data-count="feit 6" class="wistje wistje6" href="#">luchtvervuiling slecht voor foetus</a>
+    <img class="wistjes-image" height="313" width="376" src="assets/img/auto.svg" alt="Een auto" />
   </section>
 
   <section class='newsletter'>
