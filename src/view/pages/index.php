@@ -60,9 +60,9 @@
       alt="Man fietst aan het MAS in Antwerpen" />
     </picture>
     <div class="uitgelicht-events">
-      <a data-date="Ma 16" class="uitgelicht-event" href="#">Expo Mobility</a>
-      <a data-date="Wo 18" class="uitgelicht-event" href="#">Le beau V</a>
-      <a data-date="Do 19" class="uitgelicht-event" href="#">Bike Brussels</a>
+      <a data-date="Ma 16" class="uitgelicht-event" href="index.php?page=detail&id=13">Expo Mobility</a>
+      <a data-date="Wo 18" class="uitgelicht-event" href="index.php?page=detail&id=16">Le beau V</a>
+      <a data-date="Do 19" class="uitgelicht-event" href="index.php?page=detail&id=11">Bike Brussels</a>
     </div>
     <a class="uitgelicht-button button" href="index.php?page=events">alle activiteiten</a>
   </section>

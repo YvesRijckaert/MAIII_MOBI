@@ -1,5 +1,5 @@
 <main>
-<section>
+<section class="event-filter">
   <form class="filter-tag" action="?page=events" method="post">
     <input type="radio" name="datum" value="alles" checked/>
     <label>Alles</label>
@@ -26,35 +26,46 @@
     <input class='submit-button' type="submit" name="action" value="Go!"/>
   </form>
 </section>
-
-<section class="event-section">
-  <h1>Events</h2>
+<section class="event-results">
+  <header class="event-results-header">
+    <h2 class="section-title">Activiteiten</h2>
+  </header>
   <?php
   $totalEvents = count($events);
-  echo '<p>Aantal resultaten: ' . $totalEvents . '</p>';
+  echo '<p class="event-count">Aantal resultaten: ' . $totalEvents . '</p>';
   if (empty($events)) {?>
-    <p>Geen evenementen.<p>
+    <p class="event-count">Geen evenementen.<p>
   <?php } else {
     foreach($events as $event): ?>
-    <article>
-      <header>
-        <h2><?php echo $event['title']; ?></h2>
-        <a href='index.php?page=detail&amp;id=<?php echo($event['id']); ?>'>Meer info</a>
-      </header>
-      <dl>
-        <dt>code</dt><dd><?php echo $event['code'];?></dd>
-        <dt>content</dt><dd><?php echo $event['content'];?></dd>
-        <dt>practical</dt><dd><?php echo $event['practical'];?></dd>
-        <dt>location</dt><dd><?php echo $event['location'];?></dd>
-        <dt>address</dt><dd><?php echo $event['address'];?></dd>
-        <dt>postal</dt><dd><?php echo $event['postal'];?></dd>
-        <dt>city</dt><dd><?php echo $event['city'];?></dd>
-        <dt>start</dt><dd><?php echo $event['start'];?></dd>
-        <dt>end</dt><dd><?php echo $event['end'];?></dd>
-        <dt>link</dt><dd><?php echo $event['link'];?></dd>
-        <dt>organisers</dt><dd><ul><?php foreach($event['organisers'] as $organiser): ?><li><?php echo $organiser['name'];?></li><?php endforeach;?></ul></dd>
-        <dt>tags</dt><dd><ul><?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?></ul></dd>
-      </dl>
+    <a class="activity-link" href="index.php?page=detail&id=<?php echo $event['id'];?>">
+    <article class="activity-item">
+      <h3 class="activity-title"><?php echo $event['title']; ?></h3>
+      <picture class="activity-image">
+        <source media="(min-width: 1440px)" srcset="assets/img/<?php echo $event['code'];?>/full.webp" type="image/webp"/>
+        <source media="(min-width: 1440px)" srcset="assets/img/<?php echo $event['code'];?>/full.jpg" />
+        <source media="(min-width: 1024px)" srcset="assets/img/<?php echo $event['code'];?>/medium.webp"  type="image/webp" />
+        <source media="(min-width: 1024px)" srcset="assets/img/<?php echo $event['code'];?>/medium.jpg" />
+        <source media="(min-width: 768px)" srcset="assets/img/<?php echo $event['code'];?>/small.webp"  type="image/webp" />
+        <source media="(min-width: 768px)" srcset="assets/img/<?php echo $event['code'];?>/small.jpg" />
+        <source media="(min-width: 320px)" srcset="assets/img/<?php echo $event['code'];?>/mini.webp"  type="image/webp" />
+        <source media="(min-width: 320px)" srcset="assets/img/<?php echo $event['code'];?>/mini.jpg" />
+        <img class="event-image"
+        srcset="assets/img/<?php echo $event['code'];?>/full.jpg 1156w,
+                assets/img/<?php echo $event['code'];?>/medium.jpg 933w,
+                assets/img/<?php echo $event['code'];?>/small.jpg 566w,
+                assets/img/<?php echo $event['code'];?>/mini.jpg 411w"
+        alt="<?php echo $event['title'];?>" />
+      </picture>
+      <ul class="activity-tags">
+        <?php foreach(array_slice($event['tags'], 0, 3) as $tag): ?>
+          <li class="activity-tag"><?php echo $tag['tag'];?></li>
+        <?php endforeach;?>
+      </ul>
+        <p class="activity-time"><?php echo date('l d F', strtotime($event['start'])); ?></p>
+        <p class="activity-place"><?php echo $event['city'];?></p>
+      </div>
     </article>
+    </a>
   <? endforeach; } ?>
 </section>
+</main>
