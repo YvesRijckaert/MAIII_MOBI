@@ -580,7 +580,7 @@ main {
   grid-row-gap: 2vh;
   will-change: transform;
   will-change: box-shadow;
-  transition: translate .18s ease-in-out, box-shadow .18s ease-in-out;
+  transition: .18s;
 }
 
 .activity-item:hover {
