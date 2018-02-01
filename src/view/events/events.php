@@ -39,7 +39,6 @@
     foreach($events as $event): ?>
     <a class="activity-link" href="index.php?page=detail&id=<?php echo $event['id'];?>">
     <article class="activity-item">
-      <h3 class="activity-title"><?php echo $event['title']; ?></h3>
       <picture class="activity-image">
         <source media="(min-width: 1440px)" srcset="assets/img/<?php echo $event['code'];?>/full.webp" type="image/webp"/>
         <source media="(min-width: 1440px)" srcset="assets/img/<?php echo $event['code'];?>/full.jpg" />
@@ -49,7 +48,7 @@
         <source media="(min-width: 768px)" srcset="assets/img/<?php echo $event['code'];?>/small.jpg" />
         <source media="(min-width: 320px)" srcset="assets/img/<?php echo $event['code'];?>/mini.webp"  type="image/webp" />
         <source media="(min-width: 320px)" srcset="assets/img/<?php echo $event['code'];?>/mini.jpg" />
-        <img class="event-image"
+        <img class="activity-image"
         srcset="assets/img/<?php echo $event['code'];?>/full.jpg 1156w,
                 assets/img/<?php echo $event['code'];?>/medium.jpg 933w,
                 assets/img/<?php echo $event['code'];?>/small.jpg 566w,
@@ -61,9 +60,11 @@
           <li class="activity-tag"><?php echo $tag['tag'];?></li>
         <?php endforeach;?>
       </ul>
-        <p class="activity-time"><?php echo date('l d F', strtotime($event['start'])); ?></p>
-        <p class="activity-place"><?php echo $event['city'];?></p>
-      </div>
+        <div class="activity-info">
+          <h3 class="activity-title"><?php echo $event['title']; ?></h3>
+          <p class="activity-time"><?php echo date('d/m', strtotime($event['start'])); ?><?php if(date('d/m', strtotime($event['start'])) != date('d/m', strtotime($event['end']))) {echo ' tot ' . date('d/m', strtotime($event['end']));} ?></p>
+          <p class="activity-place"><?php echo $event['city'];?></p>
+        </div>
     </article>
     </a>
   <? endforeach; } ?>

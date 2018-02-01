@@ -281,6 +281,7 @@ main {
   background-repeat: no-repeat;
   background-size: 3.2rem 3.6rem;
   background-position: center;
+  will-change: transform;
 }
 
 .uitgelicht-event:hover::after {
@@ -543,6 +544,105 @@ main {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+/* activiteiten page */
+
+.event-results {
+  display: grid;
+  grid-template: 10vh / 26.7vw 26.7vw 26.7vw;
+  grid-gap: 8rem 2rem;
+  justify-content: center;
+  grid-template-areas:
+    'header header header'
+    'count count count';
+}
+
+.event-results-header {
+  grid-area: header;
+  justify-self: center;
+  align-self: center;
+  font-size: var(--font-size-title);
+  text-transform: uppercase;
+}
+
+.event-count {
+  grid-area: count;
+}
+
+.activity-item {
+  overflow: hidden;
+  width: 25vw;
+  height: 20vw;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-rows: 2fr min-content 1fr;
+  grid-row-gap: 2vh;
+  will-change: transform;
+  will-change: box-shadow;
+  transition: translate .18s ease-in-out, box-shadow .18s ease-in-out;
+}
+
+.activity-item:hover {
+  transform: translateY(-.3rem);
+  box-shadow: 0 .5rem 2.5rem rgba(0, 0, 0, .1);
+}
+
+.activity-image {
+  grid-row: span 3;
+  width: 100%;
+  height: 20vw;
+  object-fit: cover;
+  z-index: -100;
+}
+
+.activity-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  color: var(--dark-red);
+}
+
+.activity-tag {
+  padding: .5rem;
+  background-color: var(--light-yellow);
+  margin-right: 1rem;
+}
+
+.activity-info {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  height: 15rem;
+  background-color: rgba(212, 243, 236, .9);
+  display: grid;
+  grid-template-rows: 1fr .5fr .5fr;
+  padding-bottom: 2rem;
+}
+
+.activity-title {
+  font-weight: 500;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+.activity-time, .activity-place {
+  display: flex;
+  align-items: center;
+}
+
+.activity-time::before, .activity-place::before {
+  content: '';
+  background: url(/assets/img/clock.svg) no-repeat;
+  background-size: 100%;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.activity-place::before {
+  background: url(/assets/img/compass.svg) no-repeat;
+  background-size: 100%;
 }
 
 /* footer */
