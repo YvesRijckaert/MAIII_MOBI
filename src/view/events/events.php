@@ -49,10 +49,10 @@
         <source media="(min-width: 320px)" srcset="assets/img/<?php echo $event['code'];?>/mini.webp"  type="image/webp" />
         <source media="(min-width: 320px)" srcset="assets/img/<?php echo $event['code'];?>/mini.jpg" />
         <img class="activity-image"
-        srcset="assets/img/<?php echo $event['code'];?>/full.jpg 1156w,
-                assets/img/<?php echo $event['code'];?>/medium.jpg 933w,
-                assets/img/<?php echo $event['code'];?>/small.jpg 566w,
-                assets/img/<?php echo $event['code'];?>/mini.jpg 411w"
+        srcset="assets/img/<?php echo $event['code'];?>/full.jpg,
+                assets/img/<?php echo $event['code'];?>/medium.jpg,
+                assets/img/<?php echo $event['code'];?>/small.jpg,
+                assets/img/<?php echo $event['code'];?>/mini.jpg"
         alt="<?php echo $event['title'];?>" />
       </picture>
       <ul class="activity-tags">

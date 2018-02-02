@@ -28,7 +28,6 @@
           <?php echo $_SESSION['info'];?>
         </p>
       <?php endif; ?>
-
       <?php if (!empty($_SESSION['error'])): ?>
         <p>
           <?php echo $_SESSION['error'];?>
