@@ -26,7 +26,7 @@ const showResults = results => {
     const $a = document.createElement(`a`);
     $a.setAttribute(`href`, `index.php?page=detail&id=${event.id}`);
     $a.classList.add(`activity-link`);
-    $a.innerHTML = `
+    $a.innerHTML = `<h3 class="hide">Event</h3>
         <article class="activity-item">
         <picture class="activity-image">
         <source media="(min-width: 1440px)" srcset="assets/img/${event.code}/full.webp" type="image/webp"/>
@@ -51,7 +51,7 @@ const showResults = results => {
               </ul>
         <div class="activity-info">
           <h3 class="activity-title">${event.title}</h3>
-          <p class="activity-time">${dateFormat(event.start, `dd/mm`)} ${dateFormat(event.start, `dd/mm`) !== dateFormat(event.end, `dd/mm`) ? ` tot ${dateFormat(event.start, `dd/mm`)}` : ``}</p>
+          <p class="activity-time">${dateFormat(event.start, `dd/mm`)} ${dateFormat(event.start, `dd/mm`) !== dateFormat(event.end, `dd/mm`) ? ` tot ${dateFormat(event.end, `dd/mm`)}` : ``}</p>
           <p class="activity-place">${event.city}</p>
         </div>
       </article>`;

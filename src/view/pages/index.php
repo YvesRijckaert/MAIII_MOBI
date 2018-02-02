@@ -1,7 +1,4 @@
 <main class="main">
-  <?php if(!empty($_GET['activity_id'])){
-    echo $test;
-  } ?>
   <!-- <section class="above-the-fold">
     <div class="wrap">
       <h2 class="above-the-fold-title">Week<br/>van de<br/> mobiliteit</h2>

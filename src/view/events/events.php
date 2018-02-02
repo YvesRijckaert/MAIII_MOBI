@@ -3,6 +3,7 @@
     <h2 class="section-title">Activiteiten</h2>
   </header>
   <section class="event-filter">
+    <h3 class="hide">Activiteit filters</h3>
     <form class="filter-tag" action="?page=events" method="post">
       <ul class="days">
         <li class="day">
@@ -63,7 +64,7 @@
         </li>
       </ul>
       <select class="select-tag" name='tag'>
-        <option disabled selected>Kies een tag:</option>
+        <option disabled selected>Kies een categorie:</option>
         <?php foreach ($tags as $tag): ?>
           <option><?php echo($tag['tag']); ?></option>
         <?php endforeach; ?>
@@ -73,6 +74,7 @@
     </form>
   </section>
   <section class="event-results">
+    <h3 class="hide">Resultaten</h3>
     <?php
     $totalEvents = count($events);
     echo '<p class="event-count">Aantal resultaten: ' . $totalEvents . '</p>';
