@@ -2,9 +2,23 @@
   <section class="event-detail">
     <h2 class="detail-title"><?php echo $event['title']; ?></h2>
     <ul class="detail-tags">
-      <?php foreach($tags as $tag): ?><li class="detail-tag"><?php echo $tag['tag']; ?></li>
+      <?php foreach($tags as $tag): ?><li class="detail-tag activity-tag"><?php echo $tag['tag']; ?></li>
       <?php endforeach;?>
     </ul>
+
+    <picture class="detail-image">
+      <source media="(min-width: 1440px)" srcset="assets/img/<?php echo $event['code'];?>/full.webp" type="image/webp"/>
+      <source media="(min-width: 1440px)" srcset="assets/img/<?php echo $event['code'];?>/full.jpg" />
+      <source media="(min-width: 1024px)" srcset="assets/img/<?php echo $event['code'];?>/medium.webp"  type="image/webp" />
+      <source media="(min-width: 1024px)" srcset="assets/img/<?php echo $event['code'];?>/medium.jpg" />
+      <source media="(min-width: 768px)" srcset="assets/img/<?php echo $event['code'];?>/small.webp"  type="image/webp" />
+      <source media="(min-width: 768px)" srcset="assets/img/<?php echo $event['code'];?>/small.jpg" />
+      <img class="detail-image"
+      srcset="assets/img/<?php echo $event['code'];?>/full.jpg,
+              assets/img/<?php echo $event['code'];?>/medium.jpg,
+              assets/img/<?php echo $event['code'];?>/small.jpg"
+      alt="<?php echo $event['title'];?>" />
+    </picture>
 
     <section class="detail-content">
       <h3 class="detail-section-title">Ontdek</h3>

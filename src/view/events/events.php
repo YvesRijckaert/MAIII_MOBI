@@ -64,12 +64,12 @@
         </li>
       </ul>
       <select class="select-tag" name='tag'>
-        <option disabled selected>Kies een categorie:</option>
+        <option disabled selected>Categorie:</option>
         <?php foreach ($tags as $tag): ?>
           <option><?php echo($tag['tag']); ?></option>
         <?php endforeach; ?>
       </select>
-      <input class="city-search" type="search" name="city" placeholder="Waar woon je?" />
+      <input class="city-search" type="search" name="city" placeholder="Plaats:" />
       <input class='submit-button filter-submit' type="submit" name="action" value="Go!"/>
     </form>
   </section>
