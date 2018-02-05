@@ -106,7 +106,7 @@
     <header class="newsletter-header">
       <h2 class="section-title">Blijf op de hoogte</h2>
     </header>
-    <p class="newsletter-info">Mee(r) autominderen? Blijf op de hoogte van al wat leeft en beweegt in het verduurzamen van mobiliteit. Schrijf je nu in op onze nieuwsbrief!</p>
+    <p class="newsletter-info">Mee(r) autominderen? Blijf op de hoogte van al wat leeft en beweegt in het verduurzamen van mobiliteit. Schrijf je nu in op onze <strong>nieuwsbrief</strong>!</p>
     <form class="newsletter-form" action="index.php" method="post">
       <div class="form-field">
         <label for="voornaam">Voornaam</label>
@@ -118,7 +118,7 @@
       </div>
       <div class="form-field">
         <label for="email">Email</label>
-        <input class='newsletter-input' type='email' id="email" name='email' placeholder='johndoe@email.com' required />
+        <input class='newsletter-input' type='email' id="email" name='email' placeholder='naam@email.be' required />
       </div>
       <div class="form-field">
         <input class='button submit-button' type="submit" value="bevestig"/>

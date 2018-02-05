@@ -78,7 +78,7 @@
     <?php
     $totalEvents = count($events);
     echo '<p class="event-count">Aantal resultaten: ' . $totalEvents . '</p>';
-    if (empty($events)) {?>
+    if (empty($events)) { ?>
       <p class="event-count">Geen evenementen.<p>
     <?php } else {
       foreach($events as $event): ?>
@@ -112,6 +112,6 @@
           </div>
       </article>
       </a>
-    <? endforeach; } ?>
+    <?php endforeach; } ?>
   </section>
 </main>

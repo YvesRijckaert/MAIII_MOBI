@@ -559,6 +559,7 @@ main {
 
 .filter-tag {
   display: grid;
+  grid-gap: 2vw;
   grid-template: min-content min-content min-content;
   grid-template-areas:
     'dagen dagen dagen dagen dagen dagen dagen dagen'
@@ -735,7 +736,7 @@ main {
 
 .event-detail {
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 10vh;
   grid-template-areas:
     'img img'
     'content info'
@@ -771,14 +772,17 @@ main {
 
 .detail-content {
   grid-area: content;
+  margin-left: 10vw;
 }
 
 .detail-info {
   grid-area: info;
+  margin-right: 10vw;
 }
 
 .detail-practical {
   grid-area: practical;
+  margin-right: 10vw;
 }
 
 .detail-image {
@@ -828,6 +832,7 @@ main {
 @custom-media --only-big-screen (width >= 780px) and (width <= 1200px);
 @custom-media --only-medium-screen (width >= 780px) and (width <= 1025px);
 @custom-media --only-small-screen (width >= 100px) and (width <= 780px);
+@custom-media --only-mini-screen (width >= 100px) and (width <= 374px);
 
 @media (--only-biggest-screen) {
 
@@ -923,8 +928,127 @@ main {
 
 @media (--only-small-screen) {
 
+  .main {
+    grid-template-columns: 100vw;
+    justify-content: center;
+    grid-row-gap: 10vh;
+    grid-template-areas:
+      'about'
+      'uitgelicht'
+      'organiseer'
+      'wistjes'
+      'newsletter'
+      'instagram'
+      'sponsors';
+  }
+
+  .about {
+    margin-top: 5vh;
+  }
+
+  .about, .organiseer {
+    grid-template-columns: 100vw;
+    grid-template-areas:
+      'header'
+      'image'
+      'text'
+      'button';
+    background: linear-gradient(var(--light-yellow) 20vh, transparent  0);
+    background-position-y: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about::after, .organiseer::after {
+    display: none;
+  }
+
+  .about-text, .organiseer-text {
+    margin: 5vw 10vw;
+  }
+
+  .about-image, .organiseer-image {
+    width: 50vw;
+  }
+
+  .about-image::after, .organiseer-image::after {
+    display: none;
+  }
+
+  .about-buttons, .organiseer-button {
+    align-self: center;
+  }
+
+  .uitgelicht {
+    grid-template-columns: 80vw;
+    grid-gap: 2.5vh 0;
+    grid-template-areas:
+      'header'
+      'events';
+  }
+
+  .uitgelicht-event::before {
+    background-color: transparent;
+    color: black;
+    margin-right: 5vw;
+    margin-left: 5vw;
+  }
+
+  .uitgelicht-image {
+    display: none;
+  }
+
+  .wistjes {
+    grid-template-columns: 80vw;
+    grid-gap: 2.5vh 0;
+    grid-template-areas:
+      'header'
+      'wistje1'
+      'wistje2'
+      'wistje3';
+  }
+
+  .wistje {
+    width: 100%;
+  }
+
+  .wistje::before {
+    width: 20vmin;
+  }
+
   .wistjes-image {
     display: none;
+  }
+
+  .newsletter {
+    grid-template-columns: 80vw;
+    grid-template-areas:
+      'header'
+      'text'
+      'form';
+  }
+
+  .newsletter::after {
+    background: linear-gradient(var(--light-yellow) 14rem, transparent 0);
+    right: -5rem;
+  }
+
+  .instagram {
+    grid-template-columns: 40vw 40vw;
+    grid-template-areas:
+      'header header'
+      'image1 image2'
+      'image3 button';
+  }
+
+  .instagram-button {
+    align-self: center;
+  }
+
+  .sponsors {
+    flex-direction: column;
   }
 
   .event-results {
@@ -945,5 +1069,20 @@ main {
 
   .activity-info {
     background-color: rgba(212, 243, 236);
+  }
+}
+
+@media (--only-mini-screen) {
+
+  .about-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-buttons .button:nth-child(1) {
+    margin-right: 0;
+    margin-bottom: 2.5vh;
   }
 }
