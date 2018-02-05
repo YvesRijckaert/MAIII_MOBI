@@ -277,7 +277,7 @@ main {
   width: 16rem;
   height: 10.6rem;
   transition: all .2s ease-in-out;
-  background-image: url(../assets/img/arrow.svg);
+  background-image: url(/assets/img/arrow.svg);
   background-repeat: no-repeat;
   background-size: 3.2rem 3.6rem;
   background-position: center;
@@ -725,7 +725,7 @@ main {
 
 .activity-time::before, .activity-place::before {
   content: '';
-  background: url(../assets/img/clock.svg) no-repeat;
+  background: url(/assets/img/clock.svg) no-repeat;
   background-size: 100%;
   width: 2rem;
   height: 2rem;
@@ -733,7 +733,7 @@ main {
 }
 
 .activity-place::before {
-  background: url(../assets/img/compass.svg) no-repeat;
+  background: url(/assets/img/compass.svg) no-repeat;
   background-size: 100%;
 }
 
@@ -767,12 +767,12 @@ main {
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
+  align-items: center;
 }
 
 .detail-tag {
   align-self: flex-end;
+  margin: 1rem;
 }
 
 .detail-content {
@@ -1092,6 +1092,36 @@ main {
   .activity-info {
     background-color: rgba(212, 243, 236);
   }
+
+  .filter-tag {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .city-search {
+    margin-top: 1rem;
+  }
+
+  .event-detail {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  .detail-title, .detail-tags, .detail-image, .detail-content, .detail-info, .detail-practical {
+    margin-top: 3vh;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .detail-info {
+    width: 100%;
+  }
 }
 
 @media (--only-mini-screen) {
@@ -1107,4 +1137,5 @@ main {
     margin-right: 0;
     margin-bottom: 2.5vh;
   }
+
 }
