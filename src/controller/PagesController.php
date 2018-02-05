@@ -13,10 +13,6 @@ class PagesController extends Controller { //geef PagesController dezelfde macht
 
     public function index() { //de index pagina
         if(!empty($_POST)) $this->handleNewsLetter(); //als er een POST is gebeurd, voer de functie handleNewsLetter uit
-        if(!empty($_GET['activity_id'])){
-          $test = $_GET['activity_id'];
-          $this->set('test', $test);
-        }
     }
 
     private function handleNewsLetter(){

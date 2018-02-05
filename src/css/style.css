@@ -277,7 +277,7 @@ main {
   width: 16rem;
   height: 10.6rem;
   transition: all .2s ease-in-out;
-  background-image: url(/assets/img/arrow.svg);
+  background-image: url(../assets/img/arrow.svg);
   background-repeat: no-repeat;
   background-size: 3.2rem 3.6rem;
   background-position: center;
@@ -469,6 +469,11 @@ main {
 .newsletter-form {
   grid-area: form;
   justify-self: space-evenly;
+}
+
+.form-error {
+  color: var(--dark-red);
+  font-style: italic;
 }
 
 .newsletter-input {
@@ -720,7 +725,7 @@ main {
 
 .activity-time::before, .activity-place::before {
   content: '';
-  background: url(/assets/img/clock.svg) no-repeat;
+  background: url(../assets/img/clock.svg) no-repeat;
   background-size: 100%;
   width: 2rem;
   height: 2rem;
@@ -728,7 +733,7 @@ main {
 }
 
 .activity-place::before {
-  background: url(/assets/img/compass.svg) no-repeat;
+  background: url(../assets/img/compass.svg) no-repeat;
   background-size: 100%;
 }
 
@@ -778,6 +783,13 @@ main {
 .detail-info {
   grid-area: info;
   margin-right: 10vw;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+.detail-button {
+  align-self: center;
 }
 
 .detail-practical {
@@ -794,6 +806,16 @@ main {
 }
 
 .detail-section-title {
+  font-size: var(--font-size-sutitle);
+  font-weight: 500;
+  border-bottom: .3rem solid var(--dark-red);
+}
+
+.content-listitem {
+  padding-top: 2rem;
+}
+
+.content-subtitle {
   font-size: var(--font-size-subtitle);
   font-weight: 500;
 }

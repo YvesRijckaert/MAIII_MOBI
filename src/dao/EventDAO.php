@@ -169,9 +169,11 @@ class EventDAO extends DAO {
   public function insert($data){
     $errors = $this->validateData($data);
     if(!empty($errors)) return false;
-    $sql = "INSERT INTO `ma3_auto_newsletter` (`email`) VALUES(:email)";
+    $sql = "INSERT INTO `ma3_auto_newsletter` (`email`, `voornaam`, `naam`) VALUES(:email, :voornaam, :naam)";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':email', $data['email']);
+    $stmt->bindValue(':voornaam', $data['voornaam']);
+    $stmt->bindValue(':naam', $data['naam']);
     return $stmt->execute();
   }
 

@@ -39,10 +39,11 @@
       </article>
       <a class="detail-button button" href="<?php echo $event['link']; ?>">meer info</a>
     </section>
-
+  <?php if(!empty($event['practical'])) { ?>
     <section class="detail-practical">
       <h3 class="detail-section-title">Praktisch</h3>
       <?php echo $event['practical']; ?>
     </section>
+    <?php } ?>
   </section>
 </main>

@@ -10,6 +10,12 @@ const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { retu
 
 
 const init = () => {
+  const $form = document.querySelector(`.newsletter-form`);
+  if ($form) {
+    $form.noValidate = true;
+    $form.addEventListener(`submit`, handleSubmitForm);
+    addValidationListeners(Array.from($form.elements));
+  }
   /*Progressive enhancement: AJAX tags: IF javascript works, this code will be executed:*/
   if (location.search === `?page=events`) { //if we're on the events page
     if (isSafari) {
@@ -20,55 +26,106 @@ const init = () => {
   }
 };
 
+const handleSubmitForm = e => {
+  const $form = e.currentTarget;
+  if (!$form.checkValidity()) {
+    e.preventDefault();
+  }
+  [...$form.elements].forEach($field => showValidationInfo($field));
+};
+
+const showValidationInfo = $field => {
+  const $error = getErrorElement($field);
+
+  if ($field.validity.valueMissing) {
+    $error.textContent = `Vul dit veld in.`;
+  }
+
+  if ($field.validity.typeMismatch) {
+    $error.textContent = `Dit is niet correct!`;
+  }
+
+};
+
+const getErrorElement = $element => {
+  const $testElement = $element.parentElement.querySelector(`.form-error`);
+  if (!$testElement) {
+    return getErrorElement($element.parentElement);
+  }
+  return $testElement;
+};
+
+const addValidationListeners = inputFields => {
+  inputFields.forEach($inputField => {
+    $inputField.addEventListener(`blur`, handleBlurField);
+    $inputField.addEventListener(`input`, handleInputField);
+  });
+};
+
+const handleBlurField = e => {
+  const $inputField = e.currentTarget;
+  showValidationInfo($inputField);
+};
+
+const handleInputField = e => {
+  const $inputField = e.currentTarget;
+  const $error = getErrorElement($inputField);
+
+  if ($inputField.validity.valid) {
+    $error.textContent = ``;
+  }
+};
+
 const showResults = results => {
-  eventSection.innerHTML = `<p class="event-count">Aantal resultaten: ${results.length}</p>`; //clear the results from previous searches
+  eventSection.innerHTML = `<p class="event-count">Aantal resultaten: ${results.length}</p>`;
   results.forEach(event => {
-    const $a = document.createElement(`a`);
-    $a.setAttribute(`href`, `index.php?page=detail&id=${event.id}`);
-    $a.classList.add(`activity-link`);
-    $a.innerHTML = `<h3 class="hide">Event</h3>
-        <article class="activity-item">
-        <picture class="activity-image">
-        <source media="(min-width: 1440px)" srcset="assets/img/${event.code}/full.webp" type="image/webp"/>
-        <source media="(min-width: 1440px)" srcset="assets/img/${event.code}/full.jpg" />
-        <source media="(min-width: 1024px)" srcset="assets/img/${event.code}/medium.webp"  type="image/webp" />
-        <source media="(min-width: 1024px)" srcset="assets/img/${event.code}/medium.jpg" />
-        <source media="(min-width: 768px)" srcset="assets/img/${event.code}/small.webp"  type="image/webp" />
-        <source media="(min-width: 768px)" srcset="assets/img/${event.code}/small.jpg" />
-        <source media="(min-width: 320px)" srcset="assets/img/${event.code}/mini.webp"  type="image/webp" />
-        <source media="(min-width: 320px)" srcset="assets/img/${event.code}/mini.jpg" />
-        <img class="activity-image"
-        srcset="assets/img/${event.code}/full.jpg,
-                assets/img/${event.code}/medium.jpg,
-                assets/img/${event.code}/small.jpg,
-                assets/img/${event.code}/mini.jpg"
-        alt="${event.title}" />
-        </picture>
-        <ul class="activity-tags">
-                  <li class="activity-tag">${event.tags[0].tag}</li>
-                  <li class="activity-tag">${event.tags[1].tag}</li>
-                  <li class="activity-tag">${event.tags[2].tag}</li>
-              </ul>
-        <div class="activity-info">
-          <h3 class="activity-title">${event.title}</h3>
-          <p class="activity-time">${dateFormat(event.start, `dd/mm`)} ${dateFormat(event.start, `dd/mm`) !== dateFormat(event.end, `dd/mm`) ? ` tot ${dateFormat(event.end, `dd/mm`)}` : ``}</p>
-          <p class="activity-place">${event.city}</p>
-        </div>
-      </article>`;
-    eventSection.appendChild($a);
+    showEvents(event);
   });
 };
 
 const showTagResults = results => {
-  eventSection.innerHTML = ``; //clear the results from previous searches
+  eventSection.innerHTML = `<p class="event-count">Aantal resultaten: ${results.length}</p>`;
   results.forEach(result =>
     result.forEach(event => {
-      const $p = document.createElement(`p`);
-      $p.textContent = event.title;
-      eventSection.appendChild($p);
-    }
-    )
+      showEvents(event);
+    })
   );
+};
+
+const showEvents = event => {
+  const $a = document.createElement(`a`);
+  $a.setAttribute(`href`, `index.php?page=detail&id=${event.id}`);
+  $a.classList.add(`activity-link`);
+  $a.innerHTML = `<h3 class="hide">Event</h3>
+      <article class="activity-item">
+      <picture class="activity-image">
+      <source media="(min-width: 1440px)" srcset="assets/img/${event.code}/full.webp" type="image/webp"/>
+      <source media="(min-width: 1440px)" srcset="assets/img/${event.code}/full.jpg" />
+      <source media="(min-width: 1024px)" srcset="assets/img/${event.code}/medium.webp"  type="image/webp" />
+      <source media="(min-width: 1024px)" srcset="assets/img/${event.code}/medium.jpg" />
+      <source media="(min-width: 768px)" srcset="assets/img/${event.code}/small.webp"  type="image/webp" />
+      <source media="(min-width: 768px)" srcset="assets/img/${event.code}/small.jpg" />
+      <source media="(min-width: 320px)" srcset="assets/img/${event.code}/mini.webp"  type="image/webp" />
+      <source media="(min-width: 320px)" srcset="assets/img/${event.code}/mini.jpg" />
+      <img class="activity-image"
+      srcset="assets/img/${event.code}/full.jpg,
+              assets/img/${event.code}/medium.jpg,
+              assets/img/${event.code}/small.jpg,
+              assets/img/${event.code}/mini.jpg"
+      alt="${event.title}" />
+      </picture>
+      <ul class="activity-tags">
+                <li class="activity-tag">${event.tags[0].tag}</li>
+                <li class="activity-tag">${event.tags[1].tag}</li>
+                <li class="activity-tag">${event.tags[2].tag}</li>
+            </ul>
+      <div class="activity-info">
+        <h3 class="activity-title">${event.title}</h3>
+        <p class="activity-time">${dateFormat(event.start, `dd/mm`)} ${dateFormat(event.start, `dd/mm`) !== dateFormat(event.end, `dd/mm`) ? ` tot ${dateFormat(event.end, `dd/mm`)}` : ``}</p>
+        <p class="activity-place">${event.city}</p>
+      </div>
+    </article>`;
+  eventSection.appendChild($a);
 };
 
 const parseTagData = data => {

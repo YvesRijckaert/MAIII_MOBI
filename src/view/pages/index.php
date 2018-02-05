@@ -109,14 +109,17 @@
     <p class="newsletter-info">Mee(r) autominderen? Blijf op de hoogte van al wat leeft en beweegt in het verduurzamen van mobiliteit. Schrijf je nu in op onze <strong>nieuwsbrief</strong>!</p>
     <form class="newsletter-form" action="index.php" method="post">
       <div class="form-field">
+        <span class="form-error"></span>
         <label for="voornaam">Voornaam</label>
         <input class='newsletter-input' type='name' id="voornaam" name='voornaam' placeholder='Voornaam' required />
       </div>
       <div class="form-field">
+        <span class="form-error"></span>
         <label for="naam">Naam</label>
         <input class='newsletter-input' type='name' id="naam" name='naam' placeholder='Naam' required />
       </div>
       <div class="form-field">
+        <span class="form-error"></span>
         <label for="email">Email</label>
         <input class='newsletter-input' type='email' id="email" name='email' placeholder='naam@email.be' required />
       </div>
